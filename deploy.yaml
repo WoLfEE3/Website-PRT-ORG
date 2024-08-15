@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata: 
+  name: aap1
+  namespace: default
+spec: 
+  replicas: 3
+  selector: 
+    matchlabels:
+       app1: x
+  template:
+    metadata:
+      labels:
+        app1: x2
+    spec:
+      conatiners:
+       - name: cont2
+         image: prt:v1
+         ports: 
+          - containerPort: 80
